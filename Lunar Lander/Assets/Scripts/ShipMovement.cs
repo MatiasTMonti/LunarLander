@@ -5,9 +5,10 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     private Rigidbody rb;
+    private Camera cam;
 
     [SerializeField] private ParticleSystem botton;
-    [SerializeField] private float amount = 5f;
+    [SerializeField] private float amount = 0.1f;
 
     private float h;
     private float v;
@@ -15,12 +16,13 @@ public class ShipMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
     }
 
     private void Update()
     {
-        h = Input.GetAxis("Horizontal") * amount * Time.deltaTime;
-        v = Input.GetAxis("Vertical") * amount * Time.deltaTime;
+        h = Input.GetAxis("Horizontal") * amount;
+        v = Input.GetAxis("Vertical") * amount;
     }
 
     private void FixedUpdate()
@@ -39,7 +41,7 @@ public class ShipMovement : MonoBehaviour
             botton.Stop();
         }
 
-        rb.AddTorque(transform.right * h);
-        rb.AddTorque(transform.up * v);
+        rb.AddTorque(cam.transform.forward * h);
+        rb.AddTorque(cam.transform.right * v);
     }
 }
