@@ -11,11 +11,24 @@ public class ShipMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.W))
+    //    {
+    //        rb.AddRelativeForce(new Vector3(0f, 4f, 0f), ForceMode.Impulse);
+    //    }
+    //}
+
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetAxis("Vertical") > 0.01f)
         {
-            rb.AddRelativeForce(new Vector3(0f, 4f, 0f), ForceMode.Impulse);
+            rb.AddForce(transform.up * 6.0f);
+        }
+
+        if (Input.GetAxis("Horizontal") >0.01f || Input.GetAxis("Horizontal") < 0.01f)
+        {
+            rb.AddForce((transform.right * 6.0f) * Input.GetAxis("Horizontal"));
         }
     }
 }
