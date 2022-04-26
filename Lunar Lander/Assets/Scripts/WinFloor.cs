@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class WinFloor : MonoBehaviour
 {
+    [SerializeField] private ShipMovement player;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Ganaste");
+            if (Vector3.Angle(transform.up, player.gameObject.transform.up) < 10)
+            {
+                Debug.Log("Ganaste");
+            }
+            else
+            {
+                Debug.Log("Perdiste");
+            }
         }
     }
 }
