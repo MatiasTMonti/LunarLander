@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     private Rigidbody rb;
+    [SerializeField] private ParticleSystem botton;
 
     private void Start()
     {
@@ -24,6 +25,15 @@ public class ShipMovement : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0.01f)
         {
             rb.AddForce(transform.up * 6.0f);
+
+            if (!botton.isPlaying)
+            {
+                botton.Play();
+            }
+        }
+        else if (botton.isPlaying)
+        {
+            botton.Stop();
         }
 
         if (Input.GetAxis("Horizontal") >0.01f || Input.GetAxis("Horizontal") < 0.01f)
