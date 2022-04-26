@@ -5,24 +5,27 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     private Rigidbody rb;
+
     [SerializeField] private ParticleSystem botton;
+    [SerializeField] private float amount = 5f;
+
+    private float h;
+    private float v;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.W))
-    //    {
-    //        rb.AddRelativeForce(new Vector3(0f, 4f, 0f), ForceMode.Impulse);
-    //    }
-    //}
+    private void Update()
+    {
+        h = Input.GetAxis("Horizontal") * amount * Time.deltaTime;
+        v = Input.GetAxis("Vertical") * amount * Time.deltaTime;
+    }
 
     private void FixedUpdate()
     {
-        if (Input.GetAxis("Vertical") > 0.01f)
+        if (Input.GetAxis("Jump") > 0.01f)
         {
             rb.AddForce(transform.up * 6.0f);
 
@@ -36,9 +39,7 @@ public class ShipMovement : MonoBehaviour
             botton.Stop();
         }
 
-        if (Input.GetAxis("Horizontal") >0.01f || Input.GetAxis("Horizontal") < 0.01f)
-        {
-            rb.AddForce((transform.right * 6.0f) * Input.GetAxis("Horizontal"));
-        }
+        rb.AddTorque(transform.right * h);
+        rb.AddTorque(transform.up * v);
     }
 }
