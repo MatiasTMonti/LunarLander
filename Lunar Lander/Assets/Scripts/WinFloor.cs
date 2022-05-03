@@ -8,6 +8,7 @@ public class WinFloor : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
 
+    [SerializeField] private GameObject GameoverPanel;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -21,14 +22,14 @@ public class WinFloor : MonoBehaviour
             else
             {
                 Debug.Log("Perdiste");
-                Destroy(collision.gameObject);
+                GameoverPanel.SetActive(true);
                 StartCoroutine(gameManager.GameOverLose());
             }
         }
 
         if (collision.relativeVelocity.magnitude > 3)
         {
-            Destroy(collision.gameObject);
+            GameoverPanel.SetActive(true);
             StartCoroutine(gameManager.GameOverLose());
         }
     }

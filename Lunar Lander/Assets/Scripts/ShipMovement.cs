@@ -27,11 +27,21 @@ public class ShipMovement : MonoBehaviour
 
     private void Update()
     {
+        MovePlayer();
+    }
+
+    private void FixedUpdate()
+    {
+        RotatePlayer();
+    }
+
+    public void MovePlayer()
+    {
         h = -Input.GetAxis("Horizontal") * amount;
         v = Input.GetAxis("Vertical") * amount;
     }
 
-    private void FixedUpdate()
+    public void RotatePlayer()
     {
         if (Input.GetAxis("Jump") > 0.01f && fuel > 0.0f)
         {
