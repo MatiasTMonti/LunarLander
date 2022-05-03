@@ -27,7 +27,7 @@ public class ShipMovement : MonoBehaviour
 
     private void Update()
     {
-        h = Input.GetAxis("Horizontal") * amount;
+        h = -Input.GetAxis("Horizontal") * amount;
         v = Input.GetAxis("Vertical") * amount;
     }
 
@@ -50,7 +50,7 @@ public class ShipMovement : MonoBehaviour
             botton.Stop();
         }
 
-        rb.AddTorque(cam.transform.forward * h);
-        rb.AddTorque(cam.transform.right * v);
+        rb.AddTorque(cam.transform.forward * h * Time.deltaTime);
+        rb.AddTorque(cam.transform.right * v * Time.deltaTime);
     }
 }
