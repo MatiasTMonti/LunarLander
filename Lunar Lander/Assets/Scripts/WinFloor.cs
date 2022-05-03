@@ -22,8 +22,14 @@ public class WinFloor : MonoBehaviour
             {
                 Debug.Log("Perdiste");
                 Destroy(collision.gameObject);
-               StartCoroutine(gameManager.GameOverLose());
+                StartCoroutine(gameManager.GameOverLose());
             }
+        }
+
+        if (collision.relativeVelocity.magnitude > 3)
+        {
+            Destroy(collision.gameObject);
+            StartCoroutine(gameManager.GameOverLose());
         }
     }
 }
