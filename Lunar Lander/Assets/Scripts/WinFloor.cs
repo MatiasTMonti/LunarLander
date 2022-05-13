@@ -14,25 +14,20 @@ public class WinFloor : MonoBehaviour
         {
             Destroy(player.GetComponent<ShipMovement>());
 
-            if (Vector3.Angle(transform.up, player.gameObject.transform.up) < 10)
+            if (collision.relativeVelocity.magnitude > 3 && player.GetComponent<ShipMovement>())
             {
-                Debug.Log("Ganaste");
+                GameoverLosePanel.SetActive(true);
+            }
+            else if (Vector3.Angle(transform.up, player.gameObject.transform.up) < 30)
+            {   
                 GameoverWinPanel.SetActive(true);
             }
             else
             {
-                Debug.Log("Perdiste");
-                GameoverLosePanel.SetActive(true);   
+                GameoverLosePanel.SetActive(true);
             }
-            fuelBar.SetActive(false);
-            Destroy(this);
-        }
 
-        if (collision.relativeVelocity.magnitude > 3 && player.GetComponent<ShipMovement>())
-        {
-            Destroy(player.GetComponent<ShipMovement>());
             fuelBar.SetActive(false);
-            GameoverLosePanel.SetActive(true);
             Destroy(this);
         }
     }
