@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TrackCheckpoints : MonoBehaviour
 {
+    [SerializeField] private ShipMovement ship;
     public event EventHandler OnPlayerCorrectCheckpoint;
     public event EventHandler OnPlayerWrongCheckpoint;
 
@@ -38,6 +39,7 @@ public class TrackCheckpoints : MonoBehaviour
 
             CheckpointSingle correctCheckpointSingle = checkpointSingles[nextCheckpointSingleIndex];
             correctCheckpointSingle.Hide();
+            ship.SetFuel(1.0f);
         }
         else
         {
