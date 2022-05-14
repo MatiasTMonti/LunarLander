@@ -12,7 +12,7 @@ public class MainCamera : MonoBehaviour
 
     private float distance = 10.0f;
     private float currentX = 0.0f;
-    private float currentY = 0.0f;
+    private float currentY = 90.0f;
 
     // Start is called before the first frame update
     void Start()

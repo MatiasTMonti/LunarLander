@@ -3,7 +3,37 @@ guid: bf6d9d59731206a498f47ed65117819c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Alas1
+    second: {fileID: 2100000, guid: c31f107b045fa77498a09c8181d10030, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Antenas
+    second: {fileID: 2100000, guid: 7fdc58af56010ce42a51a43c43414c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cola
+    second: {fileID: 2100000, guid: 2da3db8703a067240bf4b7a0afed6452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuerpo
+    second: {fileID: 2100000, guid: 3b27297b1e9a0674b904c25ab046b6f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ojos
+    second: {fileID: 2100000, guid: 0bc3daf65f6279a4e9de817e680638a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Patas1
+    second: {fileID: 2100000, guid: 492572bf41b47f04e9943ee08b32366b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
