@@ -43,7 +43,7 @@ public class ShipMovement : MonoBehaviour
     {
         if (Input.GetAxis("Jump") > 0.01f && fuel > 0.0f)
         {
-            fuel += -0.05f * Time.deltaTime;
+            fuel += -0.1f * Time.deltaTime;
             fuelBar.value = fuel;
 
             rb.AddForce(transform.up * 6.0f);
