@@ -580,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf6d9d59731206a498f47ed65117819c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf6d9d59731206a498f47ed65117819c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1499,6 +1499,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611869961}
   m_CullTransparentMesh: 1
+--- !u!1 &651478162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bf6d9d59731206a498f47ed65117819c, type: 3}
+  m_PrefabInstance: {fileID: 320149172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &651478163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651478162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99b8de9422d8374b9067ed221c3d1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 50
 --- !u!1 &700752137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,6 +2895,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124233299}
   m_CullTransparentMesh: 1
+--- !u!1 &1171229884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6896ff853c02de438cae9722c0ae0a4, type: 3}
+  m_PrefabInstance: {fileID: 1192734134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171229885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171229884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99b8de9422d8374b9067ed221c3d1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 50
 --- !u!1001 &1192734134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2910,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6896ff853c02de438cae9722c0ae0a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d6896ff853c02de438cae9722c0ae0a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3775,8 +3811,8 @@ Canvas:
   m_GameObject: {fileID: 1705394343}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2071967676}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
